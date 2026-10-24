@@ -1,0 +1,77 @@
+name: diagnosis_odyssey
+description: "Diagnosis Outpost — Community Outbreak Sentinel. A cross-platform civic health tool."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+
+  # State management
+  flutter_riverpod: ^2.5.1
+
+  # Persistence
+  sqflite: ^2.3.3
+  shared_preferences: ^2.2.3
+  path: ^1.9.0
+
+  # Audio
+  audioplayers: ^6.0.0
+
+  # JSON/YAML content loading
+  yaml: ^3.1.2
+  json_annotation: ^4.9.0
+
+  # Cross-platform HTTP (works on mobile and web)
+  http: ^1.2.0
+
+  # Utilities
+  freezed_annotation: ^2.4.1
+  collection: ^1.18.0
+  flutter_map: ^8.3.1
+  fl_chart: ^1.2.0
+  model_viewer_plus: ^1.10.0
+  geolocator: ^14.0.3
+  permission_handler: ^11.3.1
+  image_picker: ^1.2.3
+  record: ^7.1.1
+  url_launcher: ^6.3.2
+  latlong2: ^0.10.1
+  camera: ^0.12.1
+  speech_to_text: ^7.5.0
+  tflite_flutter: ^0.12.1
+  image: ^4.5.0
+  fftea: ^1.5.0
+  archive: ^4.1.0
+  path_provider: ^2.1.5
+  file_picker: ^13.1.0
+  webview_flutter: ^4.10.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.9
+  json_serializable: ^6.8.0
+  freezed: ^2.5.2
+  webview_flutter_platform_interface: ^2.15.1
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/content/
+    - assets/models/
+    - assets/models/classifiers/
+    - assets/images/
+    - assets/images/outbreaks/
+    - assets/images/molecules/
+    - assets/audio/
+    - assets/html/

@@ -1,0 +1,136 @@
+task: tongue
+model: mobilenetv2
+classifier_type: multi_task_attributes
+input_size: [384, 384]
+batch_size: 24
+epochs: 60
+learning_rate: 0.00005
+fine_tune_learning_rate: 0.000005
+fine_tune_epochs: 30
+fine_tune_layers: 80
+confidence_threshold: 0.55
+use_focal_loss: false
+focal_gamma: 2.0
+quantize: true
+dataset_split:
+  train: 0.7
+  val: 0.15
+  test: 0.15
+classes:
+  - strawberry_tongue
+  - white_coating
+  - pale
+  - geographic_tongue
+  - red_beefy_tongue
+  - black_hairy_tongue
+  - yellow_coating
+  - fissured_tongue
+  - cyanotic
+  - glossitis
+  - normal
+attribute_groups:
+  body_color:
+    - normal
+    - pale
+    - red
+    - purple_cyanotic
+  coating_color:
+    - none_normal
+    - white
+    - yellow
+    - gray_black
+  coating_texture:
+    - thin_normal
+    - thick
+    - greasy
+  coating_integrity:
+    - normal
+    - peeled_geographic
+  shape_features:
+    - normal
+    - fissured
+    - swollen_toothmarked
+    - red_dots_strawberry
+    - black_hairy
+  moisture:
+    - normal
+    - dry
+    - wet_slippery
+class_to_attributes:
+  normal:
+    body_color: normal
+    coating_color: none_normal
+    coating_texture: thin_normal
+    coating_integrity: normal
+    shape_features: normal
+    moisture: normal
+  pale:
+    body_color: pale
+    coating_color: none_normal
+    coating_texture: thin_normal
+    coating_integrity: normal
+    shape_features: normal
+    moisture: normal
+  red_beefy_tongue:
+    body_color: red
+    coating_color: none_normal
+    coating_texture: thin_normal
+    coating_integrity: normal
+    shape_features: normal
+    moisture: normal
+  cyanotic:
+    body_color: purple_cyanotic
+    coating_color: none_normal
+    coating_texture: thin_normal
+    coating_integrity: normal
+    shape_features: normal
+    moisture: normal
+  white_coating:
+    body_color: normal
+    coating_color: white
+    coating_texture: thin_normal
+    coating_integrity: normal
+    shape_features: normal
+    moisture: normal
+  yellow_coating:
+    body_color: normal
+    coating_color: yellow
+    coating_texture: thin_normal
+    coating_integrity: normal
+    shape_features: normal
+    moisture: normal
+  black_hairy_tongue:
+    body_color: normal
+    coating_color: gray_black
+    coating_texture: thick
+    coating_integrity: normal
+    shape_features: black_hairy
+    moisture: dry
+  fissured_tongue:
+    body_color: normal
+    coating_color: none_normal
+    coating_texture: thin_normal
+    coating_integrity: normal
+    shape_features: fissured
+    moisture: dry
+  geographic_tongue:
+    body_color: normal
+    coating_color: none_normal
+    coating_texture: thin_normal
+    coating_integrity: peeled_geographic
+    shape_features: normal
+    moisture: normal
+  strawberry_tongue:
+    body_color: red
+    coating_color: none_normal
+    coating_texture: thin_normal
+    coating_integrity: normal
+    shape_features: red_dots_strawberry
+    moisture: normal
+  glossitis:
+    body_color: normal
+    coating_color: none_normal
+    coating_texture: thin_normal
+    coating_integrity: normal
+    shape_features: swollen_toothmarked
+    moisture: normal

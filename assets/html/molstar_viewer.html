@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Protein Structure</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/molstar@4.13.0/build/viewer/molstar.css" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #app {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    #overlay-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 26px;
+      background: rgba(20, 20, 20, 0.92);
+      color: #fff;
+      padding: 4px 10px;
+      font-size: 13px;
+      z-index: 1000;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border-bottom: 1px solid #333;
+      box-sizing: border-box;
+    }
+
+    #overlay-info {
+      position: absolute;
+      top: 102px;
+      left: 0;
+      right: 0;
+      min-height: 40px;
+      max-height: 72px;
+      background: rgba(20, 20, 20, 0.92);
+      color: #eee;
+      padding: 8px 10px;
+      font-size: 12px;
+      z-index: 1000;
+      border-bottom: 1px solid #333;
+      box-sizing: border-box;
+      display: none;
+      align-items: center;
+    }
+
+    #overlay-info.visible {
+      display: flex;
+    }
+
+    #overlay-info .residue-label {
+      font-weight: bold;
+      color: #4fc3f7;
+      margin-right: 8px;
+      white-space: nowrap;
+    }
+
+    #overlay-info .residue-desc {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    /* Molstar layout overrides.
+       Keep the top region (it contains the sequence strip), hide the side and
+       bottom panels, and place the 3-D viewport below the sequence strip. */
+    .msp-plugin .msp-layout-standard .msp-layout-top,
+    .msp-plugin .msp-layout-standard-outside .msp-layout-top,
+    .msp-plugin .msp-layout-expanded .msp-layout-top {
+      top: 26px !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      height: 110px !important;
+      border-bottom: 1px solid #333 !important;
+      background: #111 !important;
+      z-index: 1 !important;
+    }
+
+    .msp-plugin .msp-layout-standard .msp-layout-main,
+    .msp-plugin .msp-layout-standard-outside .msp-layout-main,
+    .msp-plugin .msp-layout-expanded .msp-layout-main {
+      top: 136px !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+    }
+
+    .msp-plugin .msp-layout-standard .msp-layout-left,
+    .msp-plugin .msp-layout-standard-outside .msp-layout-left,
+    .msp-plugin .msp-layout-expanded .msp-layout-left,
+    .msp-plugin .msp-layout-standard .msp-layout-right,
+    .msp-plugin .msp-layout-standard-outside .msp-layout-right,
+    .msp-plugin .msp-layout-expanded .msp-layout-right,
+    .msp-plugin .msp-layout-standard .msp-layout-bottom,
+    .msp-plugin .msp-layout-standard-outside .msp-layout-bottom,
+    .msp-plugin .msp-layout-expanded .msp-layout-bottom {
+      display: none !important;
+    }
+
+    /* Keep the sequence strip but hide other top controls. */
+    .msp-plugin .msp-layout-top .msp-viewport-top,
+    .msp-plugin .msp-layout-top .msp-viewport-top-left-controls,
+    .msp-plugin .msp-layout-top .msp-viewport-top-right-controls,
+    .msp-plugin .msp-layout-top .msp-sequence-header,
+    .msp-plugin .msp-layout-top .msp-sequence-wrapper > div:first-child:not(.msp-sequence) {
+      display: none !important;
+    }
+
+    /* Flex column layout: header rows stack at the top, scrollable body fills the rest. */
+    .msp-plugin .msp-layout-top .msp-sequence {
+      width: 100% !important;
+      height: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    .msp-plugin .msp-layout-top .msp-sequence-select {
+      position: static !important;
+      flex: 0 0 auto !important;
+      height: auto !important;
+      min-height: 20px !important;
+      line-height: 20px !important;
+      background: transparent !important;
+    }
+    .msp-plugin .msp-layout-top .msp-sequence-select > span,
+    .msp-plugin .msp-layout-top .msp-sequence-select > select {
+      height: 20px !important;
+      line-height: 20px !important;
+    }
+    .msp-plugin .msp-layout-top .msp-sequence-wrapper-non-empty {
+      position: static !important;
+      flex: 1 1 auto !important;
+      top: auto !important;
+      bottom: auto !important;
+      background: transparent !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+    }
+    .msp-plugin .msp-layout-top .msp-sequence-wrapper {
+      width: 100% !important;
+      height: auto !important;
+      min-height: 18px !important;
+      display: block !important;
+      padding-top: 2px !important;
+      padding-bottom: 2px !important;
+    }
+    .msp-plugin .msp-layout-top .msp-sequence-number {
+      top: -0.7em !important;
+    }
+    .msp-plugin .msp-layout-top .msp-sequence-chain-label {
+      color: #aaa !important;
+      margin: 2px 0 !important;
+      font-size: 80% !important;
+    }
+
+    /* Reset popup is toggled only by an active class (no hover), so phones and
+       desktops behave the same: tap the refresh icon to open/close the menu. */
+    .msp-plugin .msp-hover-box-wrapper:hover .msp-hover-box-body,
+    .msp-plugin .msp-hover-box-wrapper:hover .msp-hover-box-spacer {
+      visibility: hidden !important;
+    }
+    .msp-plugin .msp-hover-box-wrapper.active .msp-hover-box-body,
+    .msp-plugin .msp-hover-box-wrapper.active .msp-hover-box-spacer {
+      visibility: visible !important;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="overlay-header">Sequence</div>
+    <div id="overlay-info">
+      <span class="residue-label" id="residue-label"></span>
+      <span class="residue-desc" id="residue-desc"></span>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/molstar@4.13.0/build/viewer/molstar.js"></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var pdbId = params.get('pdb');
+      var molecularName = params.get('name') || '';
+      if (!pdbId) {
+        document.body.innerHTML = '<div style="color:white;padding:20px;">Missing PDB ID</div>';
+        return;
+      }
+
+      document.getElementById('overlay-header').textContent =
+        'Sequence of ' + (molecularName || pdbId.toUpperCase());
+
+      var viewer;
+      var infoEl = document.getElementById('overlay-info');
+      var labelEl = document.getElementById('residue-label');
+      var descEl = document.getElementById('residue-desc');
+
+      var RESIDUE_CODES = {
+        'ALA': 'A', 'ARG': 'R', 'ASN': 'N', 'ASP': 'D', 'CYS': 'C',
+        'GLN': 'Q', 'GLU': 'E', 'GLY': 'G', 'HIS': 'H', 'ILE': 'I',
+        'LEU': 'L', 'LYS': 'K', 'MET': 'M', 'PHE': 'F', 'PRO': 'P',
+        'SER': 'S', 'THR': 'T', 'TRP': 'W', 'TYR': 'Y', 'VAL': 'V'
+      };
+
+      function updateResidueInfo(loci) {
+        if (!loci || loci.kind !== 'element-loci' || !loci.elements || !loci.elements.length) {
+          infoEl.classList.remove('visible');
+          return;
+        }
+        var first = loci.elements[0];
+        if (!first || !first.unit || !first.unit.model || !first.unit.model.atomicHierarchy) {
+          infoEl.classList.remove('visible');
+          return;
+        }
+        var hierarchy = first.unit.model.atomicHierarchy;
+        var residueIndex = first.unit.model.atomicHierarchy.atomProperties.residueIndex;
+        if (!residueIndex || !first.indices || !first.indices.length) {
+          infoEl.classList.remove('visible');
+          return;
+        }
+        var atomIdx = first.indices[0];
+        var rIdx = residueIndex.value(atomIdx);
+        var name = hierarchy.residues.label_comp_id.value(rIdx);
+        var seqId = hierarchy.residues.label_seq_id.value(rIdx);
+        var chain = hierarchy.residues.label_asym_id.value(rIdx);
+        var code = RESIDUE_CODES[name] || name;
+        var label = code + (seqId || '');
+        var desc = (name || 'Unknown residue');
+        if (chain) desc += ' · Chain ' + chain;
+        if (seqId) desc += ' · Position ' + seqId;
+        labelEl.textContent = label;
+        descEl.textContent = desc;
+        infoEl.classList.add('visible');
+      }
+
+      function trySubscribeSelection(plugin, callback) {
+        if (!plugin || !plugin.managers || !plugin.managers.interactivity) return;
+        var lociSelects = plugin.managers.interactivity.lociSelects;
+        if (!lociSelects) return;
+        var targets = [
+          lociSelects.updates,
+          lociSelects.behavior,
+          lociSelects,
+        ];
+        for (var i = 0; i < targets.length; i++) {
+          var target = targets[i];
+          if (target && typeof target.subscribe === 'function') {
+            try {
+              return target.subscribe({
+                next: function (event) {
+                  var loci = event && event.kind ? event : lociSelects.latest;
+                  callback(loci);
+                }
+              });
+            } catch (e) {}
+          }
+        }
+      }
+
+      function closeActiveHoverBoxes() {
+        document.querySelectorAll('.msp-hover-box-wrapper.active').forEach(function (w) {
+          w.classList.remove('active');
+        });
+      }
+
+      function setupHoverBoxToggle() {
+        // Use capture phase so we can stop React's icon onClick from also firing
+        // (otherwise tapping the refresh icon would reset the camera every time).
+        document.addEventListener('click', function (e) {
+          var target = e.target;
+          // Let menu-item clicks pass through.
+          if (target.closest('.msp-hover-box-body')) return;
+          if (target.classList && target.classList.contains('msp-hover-box-spacer')) return;
+
+          var wrapper = target.closest('.msp-hover-box-wrapper');
+          if (wrapper) {
+            var isActive = wrapper.classList.contains('active');
+            closeActiveHoverBoxes();
+            if (!isActive) wrapper.classList.add('active');
+            e.stopPropagation();
+            return;
+          }
+          // Tap/click outside any hover-box control closes all active popups.
+          closeActiveHoverBoxes();
+        }, true);
+      }
+
+      function ensureSequencePanelVisible() {
+        if (!viewer || !viewer.plugin || !viewer.plugin.layout) return;
+        var plugin = viewer.plugin;
+        var state = plugin.layout.state || {};
+        var regionState = state.regionState || {};
+        var needsUpdate = false;
+        if (state.showControls !== true) needsUpdate = true;
+        if (regionState.top !== 'full') needsUpdate = true;
+        if (needsUpdate) {
+          plugin.layout.setProps({
+            showControls: true,
+            regionState: {
+              left: regionState.left || 'hidden',
+              right: regionState.right || 'hidden',
+              bottom: regionState.bottom || 'hidden',
+              top: 'full'
+            }
+          });
+          if (plugin.layout.events && plugin.layout.events.updated) {
+            plugin.layout.events.updated.next(void 0);
+          }
+        }
+      }
+
+      molstar.Viewer.create('app', {
+        layoutIsExpanded: true,
+        layoutShowControls: true,
+        layoutShowRemoteState: false,
+        layoutShowSequence: true,
+        layoutShowLog: false,
+        layoutShowLeftPanel: false,
+        viewportShowExpand: false,
+        viewportShowControls: true,
+        viewportShowSettings: false,
+        viewportShowSelectionMode: false,
+        viewportShowAnimation: false,
+        viewportShowTrajectoryControls: false,
+      }).then(function (created) {
+        viewer = created;
+        var plugin = viewer.plugin;
+        trySubscribeSelection(plugin, updateResidueInfo);
+        setupHoverBoxToggle();
+        ensureSequencePanelVisible();
+        return viewer.loadPdb(pdbId).then(function () {
+          // Re-apply after the structure loads in case layout state changed.
+          setTimeout(ensureSequencePanelVisible, 0);
+        });
+      }).catch(function (err) {
+        document.body.innerHTML = '<div style="color:white;padding:20px;">Unable to load structure: ' + err + '</div>';
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,769 @@
+outbreak_intel:
+- id: influenza_a
+  name: Influenza A
+  commonName: Flu
+  rarity: common
+  category: respiratory
+  heroImage: assets/images/influenza_a_hero.jpg
+  model3d: ''
+  molecularFormula: Influenza A hemagglutinin trimer
+  model3dSource: RCSB PDB 1RU7
+  pdbId: 1RU7
+  molecularStructure: assets/images/influenza_a_hero.jpg
+  molecularImage: assets/images/molecules/influenza_a.jpg
+  description: 'Influenza A viruses infect the nose, throat, and lungs. They spread mainly by respiratory droplets and cause
+    seasonal flu outbreaks every year.
+
+    '
+  stats:
+    r0: 1.3 – 1.8
+    incubationDays: 1 – 4 days
+    severity: moderate
+    transmissionRoute: respiratory droplets
+    vaccineAvailable: true
+  nationalStats:
+    infectants: 12347
+    mortalityRate: 0.02%
+    infectionRate: 1.8%
+    recovered: 11204
+  transmissionMedia:
+  - airborne
+  - humanToHuman
+  clinicalProfile:
+    hiddenPeriodDays: 1 – 4 days
+    variants: H1N1 (seasonal)
+    severity: Moderate
+  cityOutbreaks:
+  - city: San Diego
+    lat: 32.7157
+    lng: -117.1611
+    activeInfectants: 1247
+    recovered: 11204
+  - city: Los Angeles
+    lat: 34.0522
+    lng: -118.2437
+    activeInfectants: 3842
+    recovered: 32150
+  - city: San Francisco
+    lat: 37.7749
+    lng: -122.4194
+    activeInfectants: 756
+    recovered: 8901
+  symptoms:
+  - fever
+  - cough
+  - sore throat
+  - runny nose
+  - body aches
+  - fatigue
+  actions:
+  - rest and hydrate
+  - stay home while sick
+  - seek care if breathing is difficult
+  - consider antiviral medication early
+  citations:
+  - text: CDC — Influenza (Flu)
+    url: https://www.cdc.gov/flu/
+  - text: 'Image: CDC/Wikimedia Commons — Transmission electron micrograph of Influenza A virions'
+    url: https://commons.wikimedia.org/wiki/File:Influenza_A_virus_TEM.jpg
+  unlockCondition: Complete your first risk check.
+- id: covid_19
+  name: COVID-19
+  commonName: COVID
+  rarity: uncommon
+  category: respiratory
+  heroImage: assets/images/covid19_hero.jpg
+  model3d: assets/models/sars_cov_2_spike_6vxx.glb
+  molecularFormula: SARS-CoV-2 spike glycoprotein
+  model3dSource: RCSB PDB 6VXX
+  pdbId: 6VXX
+  molecularStructure: assets/images/covid19_hero.jpg
+  molecularImage: assets/images/molecules/covid_19.jpg
+  description: 'COVID-19 is caused by the SARS-CoV-2 coronavirus. It spreads through respiratory droplets and aerosols and
+    can range from mild to severe.
+
+    '
+  stats:
+    r0: 2 – 3
+    incubationDays: 2 – 14 days
+    severity: moderate to severe
+    transmissionRoute: respiratory droplets and aerosols
+    vaccineAvailable: true
+  nationalStats:
+    infectants: 8156
+    mortalityRate: 0.10%
+    infectionRate: 2.1%
+    recovered: 7543
+  transmissionMedia:
+  - airborne
+  - directContact
+  - humanToHuman
+  clinicalProfile:
+    hiddenPeriodDays: 2 – 14 days
+    variants: JN.1 lineage
+    severity: Moderate to severe
+  cityOutbreaks:
+  - city: San Diego
+    lat: 32.7157
+    lng: -117.1611
+    activeInfectants: 412
+    recovered: 3890
+  - city: Phoenix
+    lat: 33.4484
+    lng: -112.074
+    activeInfectants: 623
+    recovered: 5102
+  - city: Seattle
+    lat: 47.6062
+    lng: -122.3321
+    activeInfectants: 298
+    recovered: 2756
+  symptoms:
+  - fever or chills
+  - cough
+  - shortness of breath
+  - fatigue
+  - loss of taste or smell
+  - sore throat
+  actions:
+  - test if symptomatic
+  - isolate if positive
+  - seek care for breathing difficulty
+  - stay up to date on vaccines
+  citations:
+  - text: CDC — COVID-19
+    url: https://www.cdc.gov/coronavirus/2019-ncov/
+  - text: 'Image: NIH/NIAID — Novel Coronavirus SARS-CoV-2 transmission electron micrograph'
+    url: https://commons.wikimedia.org/wiki/File:Novel_Coronavirus_SARS-CoV-2_(49597020648).jpg
+  unlockCondition: View the daily briefing.
+- id: measles
+  name: Measles
+  commonName: Measles
+  rarity: rare
+  category: respiratory
+  heroImage: assets/images/measles_hero.jpg
+  model3d: ''
+  molecularFormula: Measles virus fusion glycoprotein
+  model3dSource: RCSB PDB 5YXW
+  pdbId: 5YXW
+  molecularStructure: assets/images/measles_hero.jpg
+  molecularImage: assets/images/molecules/measles.jpg
+  description: 'Measles is one of the most contagious infectious diseases. It is caused by a paramyxovirus and can lead to
+    serious complications, especially in children.
+
+    '
+  stats:
+    r0: 12 – 18
+    incubationDays: 7 – 14 days
+    severity: severe
+    transmissionRoute: respiratory droplets, airborne
+    vaccineAvailable: true
+  nationalStats:
+    infectants: 1842
+    mortalityRate: 0.12%
+    infectionRate: 0.4%
+    recovered: 1650
+  transmissionMedia:
+  - airborne
+  - humanToHuman
+  clinicalProfile:
+    hiddenPeriodDays: 7 – 14 days
+    variants: Genotype D8
+    severity: Severe
+  cityOutbreaks:
+  - city: San Diego
+    lat: 32.7157
+    lng: -117.1611
+    activeInfectants: 23
+    recovered: 198
+  - city: Portland
+    lat: 45.5152
+    lng: -122.6784
+    activeInfectants: 41
+    recovered: 312
+  symptoms:
+  - high fever
+  - cough
+  - runny nose
+  - red eyes
+  - rash
+  actions:
+  - call a clinician before visiting
+  - get vaccinated with MMR
+  - isolate if infected
+  - notify public health if exposed
+  citations:
+  - text: CDC — Measles
+    url: https://www.cdc.gov/measles/
+  - text: 'Image: CDC/Cynthia S. Goldsmith — Measles virus particle transmission electron micrograph'
+    url: https://commons.wikimedia.org/wiki/File:Measles_Virus_Particle.jpg
+  unlockCondition: Discover a high-risk signal in your region.
+- id: norovirus
+  name: Norovirus
+  commonName: Stomach bug
+  rarity: common
+  category: gastrointestinal
+  heroImage: assets/images/norovirus_hero.jpg
+  model3d: ''
+  molecularFormula: Norovirus capsid protein
+  model3dSource: RCSB PDB 1IHM
+  pdbId: 1IHM
+  molecularStructure: assets/images/norovirus_hero.jpg
+  molecularImage: assets/images/molecules/norovirus.jpg
+  description: 'Norovirus causes sudden vomiting and diarrhea. It spreads through contaminated food, water, surfaces, and
+    close contact, often causing outbreaks in schools and cruise ships.
+
+    '
+  stats:
+    r0: 1.5 – 3
+    incubationDays: 12 – 48 hours
+    severity: mild to moderate
+    transmissionRoute: fecal-oral, contaminated surfaces
+    vaccineAvailable: false
+  nationalStats:
+    infectants: 5621
+    mortalityRate: 0.001%
+    infectionRate: 3.2%
+    recovered: 5410
+  transmissionMedia:
+  - food
+  - directContact
+  - serialContact
+  - humanToHuman
+  clinicalProfile:
+    hiddenPeriodDays: 12 – 48 hours
+    variants: GII.4 Sydney
+    severity: Mild to moderate
+  cityOutbreaks:
+  - city: San Diego
+    lat: 32.7157
+    lng: -117.1611
+    activeInfectants: 312
+    recovered: 2890
+  - city: Las Vegas
+    lat: 36.1699
+    lng: -115.1398
+    activeInfectants: 287
+    recovered: 2103
+  symptoms:
+  - vomiting
+  - diarrhea
+  - stomach cramps
+  - nausea
+  - low-grade fever
+  actions:
+  - wash hands thoroughly
+  - disinfect contaminated surfaces
+  - stay hydrated
+  - avoid preparing food while sick
+  citations:
+  - text: CDC — Norovirus
+    url: https://www.cdc.gov/norovirus/
+  - text: 'Image: CDC/PHIL — Norovirus particles electron micrograph'
+    url: https://commons.wikimedia.org/wiki/File:Norovirus_EM_PHIL_2172_lores.jpg
+  unlockCondition: Complete three risk checks.
+- id: mpox
+  name: Mpox
+  commonName: Mpox
+  rarity: rare
+  category: zoonotic
+  heroImage: assets/images/mpox_hero.jpg
+  model3d: assets/models/mpox_molecule.glb
+  molecularFormula: Mpox virus A42R profilin-like protein
+  model3dSource: RCSB PDB 4QWO
+  pdbId: 4QWO
+  molecularStructure: assets/images/mpox_hero.jpg
+  molecularImage: assets/images/molecules/mpox.jpg
+  description: Mpox is a zoonotic disease caused by an orthopoxvirus. It spreads through close or skin-to-skin contact, respiratory
+    droplets, and contaminated materials. Most cases resolve within weeks, but severe disease can occur.
+  stats:
+    r0: 0.3 – 1.0
+    incubationDays: 6 – 13 days
+    severity: moderate to severe
+    transmissionRoute: close contact, respiratory droplets, contaminated materials
+    vaccineAvailable: true
+  nationalStats:
+    infectants: 312
+    mortalityRate: 0.03%
+    infectionRate: 0.1%
+    recovered: 289
+  transmissionMedia:
+  - directContact
+  - humanToHuman
+  - serialContact
+  clinicalProfile:
+    hiddenPeriodDays: 6 – 13 days
+    variants: Clade I and Clade II
+    severity: Moderate to severe
+  cityOutbreaks:
+  - city: San Diego
+    lat: 32.7157
+    lng: -117.1611
+    activeInfectants: 12
+    recovered: 45
+  - city: New York
+    lat: 40.7128
+    lng: -74.006
+    activeInfectants: 34
+    recovered: 128
+  symptoms:
+  - fever
+  - headache
+  - muscle aches
+  - swollen lymph nodes
+  - rash or lesions
+  - fatigue
+  actions:
+  - isolate if rash or fever develops
+  - cover lesions and avoid close contact
+  - seek medical evaluation
+  - notify public health if exposed
+  - consider vaccination if eligible
+  citations:
+  - text: CDC — Mpox
+    url: https://www.cdc.gov/mpox/
+  - text: WHO — Mpox
+    url: https://www.who.int/news-room/fact-sheets/detail/mpox
+  - text: 'Image: CDC PHIL — Monkeypox virus lesions'
+    url: https://commons.wikimedia.org/wiki/File:Monkeypox.jpg
+  - text: PDB 4QWO — Monkeypox virus A42R profilin-like protein
+    url: https://www.rcsb.org/structure/4QWO
+  unlockCondition: Discover a high-risk signal in your region.
+- id: dengue
+  name: Dengue fever
+  commonName: Dengue
+  rarity: uncommon
+  category: vector-borne
+  heroImage: assets/images/dengue_hero.jpg
+  model3d: assets/models/dengue_molecule.glb
+  molecularFormula: Dengue virus envelope protein
+  model3dSource: RCSB PDB 1OAN
+  pdbId: 1OAN
+  molecularStructure: assets/images/dengue_hero.jpg
+  molecularImage: assets/images/molecules/dengue.jpg
+  description: Dengue is a mosquito-borne viral disease found in tropical and subtropical regions. Infection can be asymptomatic
+    or cause flu-like illness; severe dengue can lead to hemorrhage, shock, and death.
+  stats:
+    r0: 1.0 – 3.0
+    incubationDays: 4 – 10 days
+    severity: mild to severe
+    transmissionRoute: mosquito bite (Aedes aegypti and Aedes albopictus)
+    vaccineAvailable: false
+  nationalStats:
+    infectants: 1847
+    mortalityRate: 0.05%
+    infectionRate: 0.6%
+    recovered: 1750
+  transmissionMedia:
+  - animalToHuman
+  clinicalProfile:
+    hiddenPeriodDays: 4 – 10 days
+    variants: DENV-1, DENV-2, DENV-3, DENV-4
+    severity: Mild to severe
+  cityOutbreaks:
+  - city: Miami
+    lat: 25.7617
+    lng: -80.1918
+    activeInfectants: 89
+    recovered: 312
+  - city: Houston
+    lat: 29.7604
+    lng: -95.3698
+    activeInfectants: 56
+    recovered: 198
+  symptoms:
+  - high fever
+  - severe headache
+  - pain behind the eyes
+  - joint and muscle pain
+  - nausea
+  - rash
+  actions:
+  - use insect repellent and wear long sleeves
+  - rest and stay hydrated
+  - seek care if bleeding or severe abdominal pain occurs
+  - avoid aspirin and NSAIDs unless directed
+  citations:
+  - text: CDC — Dengue
+    url: https://www.cdc.gov/dengue/
+  - text: WHO — Dengue and severe dengue
+    url: https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue
+  - text: 'Image: CDC — Aedes aegypti mosquito'
+    url: https://commons.wikimedia.org/wiki/File:Aedes_aegypti_CDC-Gathany.jpg
+  - text: PDB 1OAN — Dengue virus envelope protein
+    url: https://www.rcsb.org/structure/1OAN
+  unlockCondition: Discover a high-risk signal in your region.
+- id: pertussis
+  name: Pertussis
+  commonName: Whooping cough
+  rarity: uncommon
+  category: respiratory
+  heroImage: assets/images/pertussis_hero.jpg
+  model3d: assets/models/pertussis_molecule.glb
+  molecularFormula: Pertussis toxin
+  model3dSource: RCSB PDB 1PTO
+  pdbId: 1PTO
+  molecularStructure: assets/images/pertussis_hero.jpg
+  molecularImage: assets/images/molecules/pertussis.jpg
+  description: Pertussis (whooping cough) is a highly contagious respiratory disease caused by Bordetella pertussis bacteria.
+    It is especially dangerous for infants and can cause prolonged coughing fits, apnea, and pneumonia.
+  stats:
+    r0: 12 – 17
+    incubationDays: 5 – 10 days
+    severity: moderate to severe
+    transmissionRoute: respiratory droplets
+    vaccineAvailable: true
+  nationalStats:
+    infectants: 2147
+    mortalityRate: 0.01%
+    infectionRate: 0.7%
+    recovered: 1980
+  transmissionMedia:
+  - airborne
+  - humanToHuman
+  clinicalProfile:
+    hiddenPeriodDays: 5 – 10 days
+    variants: Bordetella pertussis
+    severity: Moderate to severe
+  cityOutbreaks:
+  - city: San Diego
+    lat: 32.7157
+    lng: -117.1611
+    activeInfectants: 67
+    recovered: 234
+  - city: Portland
+    lat: 45.5152
+    lng: -122.6784
+    activeInfectants: 45
+    recovered: 156
+  symptoms:
+  - runny nose
+  - mild fever
+  - mild cough
+  - severe coughing fits
+  - whooping sound on inhalation
+  - vomiting after coughing
+  actions:
+  - see a clinician for testing and antibiotics
+  - stay home until treated
+  - get vaccinated with Tdap
+  - protect infants and pregnant people
+  citations:
+  - text: CDC — Pertussis (Whooping Cough)
+    url: https://www.cdc.gov/pertussis/
+  - text: WHO — Pertussis
+    url: https://www.who.int/health-topics/pertussis
+  - text: 'Image: CDC PHIL — Bordetella pertussis bacteria'
+    url: https://commons.wikimedia.org/wiki/File:Bordetella_pertussis.jpg
+  - text: PDB 1PTO — Pertussis toxin
+    url: https://www.rcsb.org/structure/1PTO
+  unlockCondition: Discover a high-risk signal in your region.
+- id: rsv
+  name: Respiratory Syncytial Virus
+  commonName: RSV
+  rarity: common
+  category: respiratory
+  heroImage: assets/images/rsv_hero.jpg
+  model3d: assets/models/rsv_molecule.glb
+  molecularFormula: RSV fusion glycoprotein prefusion conformation
+  model3dSource: RCSB PDB 4JHW
+  pdbId: 4JHW
+  molecularStructure: assets/images/rsv_hero.jpg
+  molecularImage: assets/images/molecules/rsv.jpg
+  description: Respiratory syncytial virus (RSV) is a common respiratory virus that usually causes mild, cold-like symptoms.
+    It can be serious in infants and older adults, leading to bronchiolitis or pneumonia.
+  stats:
+    r0: 1.5 – 3.0
+    incubationDays: 4 – 6 days
+    severity: mild to severe
+    transmissionRoute: respiratory droplets, contaminated surfaces
+    vaccineAvailable: true
+  nationalStats:
+    infectants: 5234
+    mortalityRate: 0.01%
+    infectionRate: 1.8%
+    recovered: 4890
+  transmissionMedia:
+  - airborne
+  - directContact
+  - serialContact
+  - humanToHuman
+  clinicalProfile:
+    hiddenPeriodDays: 4 – 6 days
+    variants: RSV-A and RSV-B
+    severity: Mild to severe
+  cityOutbreaks:
+  - city: Phoenix
+    lat: 33.4484
+    lng: -112.074
+    activeInfectants: 234
+    recovered: 890
+  - city: Seattle
+    lat: 47.6062
+    lng: -122.3321
+    activeInfectants: 178
+    recovered: 612
+  symptoms:
+  - runny nose
+  - cough
+  - wheezing
+  - fever
+  - decreased appetite
+  - difficulty breathing
+  actions:
+  - stay hydrated and rest
+  - seek care if breathing difficulty or dehydration occurs
+  - keep infants away from sick contacts
+  - consider RSV immunization for high-risk groups
+  citations:
+  - text: CDC — RSV
+    url: https://www.cdc.gov/rsv/
+  - text: WHO — Respiratory syncytial virus
+    url: https://www.who.int/news-room/fact-sheets/detail/respiratory-syncytial-virus
+  - text: 'Image: CDC PHIL — Respiratory syncytial virus'
+    url: https://commons.wikimedia.org/wiki/File:Respiratory_syncytial_virus_01.jpg
+  - text: PDB 4JHW — RSV fusion glycoprotein prefusion conformation
+    url: https://www.rcsb.org/structure/4JHW
+  unlockCondition: Complete your first risk check.
+- id: scarlet_fever
+  name: Scarlet fever
+  commonName: Scarlet fever
+  rarity: rare
+  category: respiratory
+  heroImage: assets/images/scarlet_fever_hero.jpg
+  model3d: assets/models/scarlet_fever_molecule.glb
+  molecularFormula: Streptococcal M1 protein fragment
+  model3dSource: RCSB PDB 2XNX
+  pdbId: 2XNX
+  molecularStructure: assets/images/scarlet_fever_hero.jpg
+  molecularImage: assets/images/molecules/scarlet_fever.jpg
+  description: Scarlet fever is a bacterial illness caused by toxin-producing group A Streptococcus. It produces a bright
+    red sandpaper-like rash, often with a strawberry-like tongue and high fever, usually following strep throat.
+  stats:
+    r0: 1.5 – 2.5
+    incubationDays: 2 – 5 days
+    severity: moderate
+    transmissionRoute: respiratory droplets, direct contact
+    vaccineAvailable: false
+  nationalStats:
+    infectants: 845
+    mortalityRate: 0.01%
+    infectionRate: 0.3%
+    recovered: 780
+  transmissionMedia:
+  - airborne
+  - directContact
+  - humanToHuman
+  clinicalProfile:
+    hiddenPeriodDays: 2 – 5 days
+    variants: Group A Streptococcus (Streptococcus pyogenes)
+    severity: Moderate
+  cityOutbreaks:
+  - city: San Diego
+    lat: 32.7157
+    lng: -117.1611
+    activeInfectants: 18
+    recovered: 67
+  - city: Chicago
+    lat: 41.8781
+    lng: -87.6298
+    activeInfectants: 29
+    recovered: 112
+  symptoms:
+  - high fever
+  - sore throat
+  - red sandpaper rash
+  - strawberry tongue
+  - headache
+  - nausea or vomiting
+  actions:
+  - see a clinician for antibiotics
+  - stay home until fever resolves and antibiotics started
+  - cover coughs and wash hands
+  - notify school or workplace
+  citations:
+  - text: CDC — Scarlet Fever
+    url: https://www.cdc.gov/groupastrep/diseases-public/scarlet-fever.html
+  - text: WHO — Streptococcus pyogenes
+    url: https://www.who.int/publications/i/item/9789241507342
+  - text: 'Image: CDC PHIL — Streptococcus pyogenes'
+    url: https://commons.wikimedia.org/wiki/File:Streptococcus_pyogenes_01.jpg
+  - text: PDB 2XNX — Streptococcal M1 protein fragment
+    url: https://www.rcsb.org/structure/2XNX
+  unlockCondition: Discover a high-risk signal in your region.
+- id: hfmd
+  name: Hand-foot-mouth disease
+  commonName: HFMD
+  rarity: common
+  category: gastrointestinal
+  heroImage: assets/images/hfmd_hero.jpg
+  model3d: assets/models/hfmd_molecule.glb
+  molecularFormula: Human coxsackievirus B3 coat protein
+  model3dSource: RCSB PDB 4GB3
+  pdbId: 4GB3
+  molecularStructure: assets/images/hfmd_hero.jpg
+  molecularImage: assets/images/molecules/hfmd.jpg
+  description: Hand, foot, and mouth disease is a common childhood illness caused by coxsackieviruses and other enteroviruses.
+    It causes sores in the mouth and a rash on the hands and feet, and is most contagious during the first week.
+  stats:
+    r0: 2.5 – 6.0
+    incubationDays: 3 – 6 days
+    severity: mild to moderate
+    transmissionRoute: fecal-oral, respiratory droplets, direct contact
+    vaccineAvailable: false
+  nationalStats:
+    infectants: 3245
+    mortalityRate: 0.001%
+    infectionRate: 1.2%
+    recovered: 3120
+  transmissionMedia:
+  - directContact
+  - serialContact
+  - humanToHuman
+  clinicalProfile:
+    hiddenPeriodDays: 3 – 6 days
+    variants: Coxsackievirus A16, Enterovirus A71, Coxsackievirus A6
+    severity: Mild to moderate
+  cityOutbreaks:
+  - city: San Diego
+    lat: 32.7157
+    lng: -117.1611
+    activeInfectants: 78
+    recovered: 340
+  - city: Las Vegas
+    lat: 36.1699
+    lng: -115.1398
+    activeInfectants: 56
+    recovered: 210
+  symptoms:
+  - fever
+  - sore throat
+  - painful mouth sores
+  - rash on hands and feet
+  - poor appetite
+  - irritability
+  actions:
+  - stay hydrated with cool fluids
+  - rest at home
+  - seek care if dehydration or high fever occurs
+  - wash hands frequently
+  citations:
+  - text: CDC — Hand-Foot-and-Mouth Disease
+    url: https://www.cdc.gov/hand-foot-mouth/index.html
+  - text: WHO — Hand, foot and mouth disease
+    url: https://www.who.int/news-room/fact-sheets/detail/hand-foot-and-mouth-disease
+  - text: 'Image: Wikimedia Commons — Hand Foot Mouth Disease'
+    url: https://commons.wikimedia.org/wiki/File:Hand_Foot_Mouth_Disease_Adult_36Years.jpg
+  - text: PDB 4GB3 — Human coxsackievirus B3 coat protein
+    url: https://www.rcsb.org/structure/4GB3
+  unlockCondition: Complete your first risk check.
+- id: chickenpox
+  name: Chickenpox
+  commonName: Chickenpox
+  rarity: uncommon
+  category: respiratory
+  heroImage: assets/images/chickenpox_hero.jpg
+  model3d: assets/models/chickenpox_molecule.glb
+  molecularFormula: Varicella-zoster virus protease
+  model3dSource: RCSB PDB 1VZV
+  pdbId: 1VZV
+  molecularStructure: assets/images/chickenpox_hero.jpg
+  molecularImage: assets/images/molecules/chickenpox.jpg
+  description: Chickenpox is a highly contagious disease caused by the varicella-zoster virus. It causes an itchy, blister-like
+    rash that appears in crops over several days. Vaccination has made the disease much less common.
+  stats:
+    r0: 10 – 12
+    incubationDays: 10 – 21 days
+    severity: mild to moderate
+    transmissionRoute: respiratory droplets, direct contact
+    vaccineAvailable: true
+  nationalStats:
+    infectants: 1234
+    mortalityRate: 0.01%
+    infectionRate: 0.4%
+    recovered: 1180
+  transmissionMedia:
+  - airborne
+  - directContact
+  - humanToHuman
+  clinicalProfile:
+    hiddenPeriodDays: 10 – 21 days
+    variants: Varicella-zoster virus (VZV)
+    severity: Mild to moderate
+  cityOutbreaks:
+  - city: Los Angeles
+    lat: 34.0522
+    lng: -118.2437
+    activeInfectants: 45
+    recovered: 210
+  - city: Phoenix
+    lat: 33.4484
+    lng: -112.074
+    activeInfectants: 32
+    recovered: 145
+  symptoms:
+  - fever
+  - fatigue
+  - headache
+  - loss of appetite
+  - itchy blister-like rash
+  - rash that crusts over
+  actions:
+  - stay home until all blisters crust over
+  - avoid scratching and keep nails short
+  - use calamine lotion or oatmeal baths for itching
+  - contact a clinician for high-risk groups
+  citations:
+  - text: CDC — Chickenpox
+    url: https://www.cdc.gov/chickenpox/
+  - text: WHO — Varicella
+    url: https://www.who.int/teams/immunization-vaccines-and-diseases/diseases/varicella
+  - text: 'Image: CDC PHIL — Varicella (Chickenpox) virus'
+    url: https://commons.wikimedia.org/wiki/File:Varicella_(Chickenpox)_Virus_PHIL_1878_lores.jpg
+  - text: PDB 1VZV — Varicella-zoster virus protease
+    url: https://www.rcsb.org/structure/1VZV
+  unlockCondition: Complete your first risk check.
+- id: acute_respiratory_infection
+  name: Acute Respiratory Infection
+  commonName: ARI
+  rarity: common
+  category: respiratory
+  heroImage: assets/images/outbreaks/acute_respiratory_infection.png
+  model3d: ''
+  molecularFormula: Representative respiratory virus spike protein
+  model3dSource: RCSB PDB 6VXX
+  pdbId: 6VXX
+  molecularStructure: ''
+  molecularImage: assets/images/molecules/acute_respiratory_infection.jpg
+  description: Acute respiratory infection is a broad category that includes colds, influenza, RSV, and other illnesses affecting the nose, throat, and lungs.
+  stats:
+    r0: Unknown
+    incubationDays: 1 – 14 days
+    severity: mild to severe
+    transmissionRoute: respiratory droplets and aerosols
+    vaccineAvailable: false
+  nationalStats:
+    infectants: 0
+    mortalityRate: '—'
+    infectionRate: '—'
+    recovered: 0
+  transmissionMedia:
+  - airborne
+  - humanToHuman
+  clinicalProfile:
+    hiddenPeriodDays: 1 – 14 days
+    variants: Multiple pathogens
+    severity: Mild to severe
+  cityOutbreaks: []
+  symptoms:
+  - cough
+  - fever
+  - sore throat
+  - runny nose
+  - shortness of breath
+  actions:
+  - rest and hydrate
+  - seek care if breathing is difficult
+  - stay home while sick
+  citations: []
+  unlockCondition: Complete your first risk check.

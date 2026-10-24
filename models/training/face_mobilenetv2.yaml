@@ -1,0 +1,22 @@
+task: face
+model: mobilenetv2
+input_size: [224, 224]
+num_classes: 8
+classes:
+  - conjunctivitis_eye_discharge
+  - vesicular_pustular_lesions
+  - periorbital_swelling
+  - nasal_discharge
+  - oral_perioral_lesions
+  - dry_cracked_lips
+  - normal
+  - unclear
+confidence_threshold: 0.55
+batch_size: 32
+epochs: 50
+learning_rate: 0.0001
+quantize: false
+dataset_split:
+  train: 0.7
+  val: 0.15
+  test: 0.15

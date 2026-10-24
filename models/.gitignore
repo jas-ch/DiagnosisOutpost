@@ -1,0 +1,23 @@
+# Datasets are stored outside the repo (e.g., /opt/datasets/DiagnosisOutpost)
+# via a symlink. Only exported TFLite models and label maps are committed.
+datasets/
+datasets/raw/
+datasets/processed/
+
+# Intermediate checkpoints and large model artifacts.
+checkpoints/
+*.pth
+*.h5
+*.ckpt
+*.pb
+*.onnx
+
+# Training logs and caches.
+logs/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Local environment files.
+.env
+.venv/

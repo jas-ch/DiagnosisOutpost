@@ -1,0 +1,156 @@
+{
+  "attribute_to_disease_evidence": {
+    "scarlet_fever": [
+      {
+        "shape_features": "red_dots_strawberry",
+        "score": 0.4
+      },
+      {
+        "body_color": "red",
+        "coating_color": "yellow",
+        "score": 0.3
+      }
+    ],
+    "kawasaki": [
+      {
+        "shape_features": "red_dots_strawberry",
+        "score": 0.3
+      },
+      {
+        "body_color": "red",
+        "score": 0.1
+      }
+    ],
+    "severe_pneumonia": [
+      {
+        "body_color": "purple_cyanotic",
+        "score": 0.5
+      }
+    ],
+    "covid_severe": [
+      {
+        "body_color": "purple_cyanotic",
+        "score": 0.3
+      },
+      {
+        "coating_color": "gray_black",
+        "score": 0.2
+      }
+    ],
+    "active_infection": [
+      {
+        "body_color": "red",
+        "coating_color": "yellow",
+        "score": 0.3
+      },
+      {
+        "coating_texture": "thick",
+        "score": 0.1
+      }
+    ],
+    "dehydration_sepsis": [
+      {
+        "coating_color": "gray_black",
+        "score": 0.35
+      },
+      {
+        "moisture": "dry",
+        "body_color": "red",
+        "score": 0.15
+      }
+    ]
+  },
+  "wellness_patterns": [
+    {
+      "attributes": {
+        "body_color": "pale",
+        "coating_color": "none_normal"
+      },
+      "pattern": "Qi / Yang deficiency",
+      "suggestions": [
+        "Warm cooked foods",
+        "Ginger tea",
+        "Rest",
+        "Avoid cold/raw foods"
+      ]
+    },
+    {
+      "attributes": {
+        "body_color": "red",
+        "coating_color": "yellow"
+      },
+      "pattern": "Heat / toxin pattern",
+      "suggestions": [
+        "Cooling fluids",
+        "Cucumber/watermelon",
+        "Avoid alcohol/spicy"
+      ]
+    },
+    {
+      "attributes": {
+        "body_color": "purple_cyanotic",
+        "moisture": "dry"
+      },
+      "pattern": "Blood stasis / dehydration",
+      "suggestions": [
+        "Increase hydration",
+        "Seek medical review if lips/nails also blue"
+      ]
+    },
+    {
+      "attributes": {
+        "shape_features": "fissured",
+        "body_color": "red"
+      },
+      "pattern": "Yin deficiency",
+      "suggestions": [
+        "Nourishing soups",
+        "Pear",
+        "Avoid late nights"
+      ]
+    },
+    {
+      "attributes": {
+        "shape_features": "swollen_toothmarked"
+      },
+      "pattern": "Damp retention",
+      "suggestions": [
+        "Reduce greasy/sweet foods",
+        "Light exercise"
+      ]
+    },
+    {
+      "attributes": {
+        "shape_features": "black_hairy"
+      },
+      "pattern": "Oral dysbiosis / fungal overgrowth",
+      "suggestions": [
+        "Oral hygiene",
+        "Probiotics",
+        "Avoid smoking"
+      ]
+    },
+    {
+      "attributes": {
+        "coating_integrity": "peeled_geographic"
+      },
+      "pattern": "Immune stress / Yin deficiency",
+      "suggestions": [
+        "Balanced diet",
+        "Stress reduction",
+        "Monitor"
+      ]
+    },
+    {
+      "attributes": {
+        "body_color": "pale",
+        "shape_features": "fissured"
+      },
+      "pattern": "Qi + Yin deficiency",
+      "suggestions": [
+        "Warm nourishing foods",
+        "Adequate sleep"
+      ]
+    }
+  ]
+}

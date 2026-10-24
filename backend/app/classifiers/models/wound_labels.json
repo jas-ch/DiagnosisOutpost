@@ -1,0 +1,10 @@
+{
+  "classes": [
+    "infected",
+    "not_infected_or_healing"
+  ],
+  "class_to_index": {
+    "infected": 0,
+    "not_infected_or_healing": 1
+  }
+}

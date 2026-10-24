@@ -1,0 +1,33 @@
+# Wikimedia Commons categories per task/class for curated image downloads.
+# Empty category lists are skipped by the curator and left for manual curation.
+
+rash:
+  measles_like: ["Measles"]
+  chickenpox_like: ["Chickenpox"]
+  hfmd_like: ["Hand, foot and mouth disease"]
+  monkeypox_like: ["Mpox", "Monkeypox"]
+  scarlet_fever_like: ["Scarlet fever"]
+  urticaria: ["Urticaria"]
+  impetigo_like: ["Impetigo"]
+
+tongue:
+  strawberry_tongue: ["Scarlet fever", "Kawasaki disease"]
+  white_coating: ["Oral candidiasis"]
+  pale: []  # no dedicated Commons category; use PMC / Wellcome / TongueBench
+  geographic_tongue: ["Geographic tongue"]
+  red_beefy_tongue: ["Atrophic glossitis"]
+  black_hairy_tongue: ["Black hairy tongue"]
+  yellow_coating: []
+  fissured_tongue: ["Fissured tongue"]
+  cyanotic: ["Cyanosis"]
+  glossitis: ["Glossitis", "Macroglossia"]
+  normal: []
+  unclear: []
+
+face:
+  conjunctivitis_eye_discharge: ["Conjunctivitis"]
+  vesicular_pustular_lesions: ["Herpes simplex", "Chickenpox", "Mpox"]
+  periorbital_swelling: ["Blepharitis", "Angioedema"]
+  oral_perioral_lesions: ["Herpes labialis", "Oral herpes"]
+  dry_cracked_lips: ["Cheilitis", "Angular cheilitis"]
+  nasal_discharge: ["Common cold", "Influenza", "Mucus", "Rhinitis", "Sinusitis"]

@@ -1,0 +1,37 @@
+# Wikimedia Commons search queries per task/class.
+# These queries target freely-licensed images likely to match the approved
+# classification labels. Each query is passed to the Commons search API.
+
+rash:
+  measles_like: "measles rash skin OR rubeola rash OR morbilliform rash"
+  chickenpox_like: "chickenpox vesicles skin"
+  hfmd_like: "hand foot mouth disease skin lesions"
+  monkeypox_like: "mpox monkeypox skin lesions"
+  scarlet_fever_like: "scarlet fever rash"
+  urticaria: "urticaria hives skin"
+  impetigo_like: "impetigo skin infection"
+
+wound:
+  infected: "infected wound"
+  not_infected_or_healing: "healing wound scab"
+
+tongue:
+  strawberry_tongue: 'strawberry tongue'
+  white_coating: 'white coated tongue'
+  pale: 'pale tongue pallor anemic'
+  geographic_tongue: 'geographic tongue benign migratory glossitis'
+  red_beefy_tongue: 'red beefy tongue atrophic glossitis magenta tongue'
+  black_hairy_tongue: 'black hairy tongue lingua villosa nigra'
+  yellow_coating: 'yellow coated tongue'
+  fissured_tongue: 'fissured tongue cracked tongue lingua plicata scrotal tongue'
+  cyanotic: 'cyanotic tongue blue tongue purple tongue central cyanosis'
+  glossitis: 'glossitis swollen tongue median rhomboid glossitis'
+  normal: 'human tongue anatomy healthy human tongue'
+
+face:
+  conjunctivitis_eye_discharge: "conjunctivitis eye"
+  vesicular_pustular_lesions: "vesicular pustular skin lesions face"
+  periorbital_swelling: "periorbital swelling edema"
+  nasal_discharge: "nasal discharge rhinorrhea"
+  oral_perioral_lesions: "oral perioral herpes lesions"
+  dry_cracked_lips: "dry cracked lips cheilitis"

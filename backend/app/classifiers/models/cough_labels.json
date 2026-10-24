@@ -1,0 +1,16 @@
+{
+  "classes": [
+    "dry_respiratory",
+    "productive_respiratory",
+    "whooping",
+    "wheeze_present",
+    "non_pathological_or_unclear"
+  ],
+  "class_to_index": {
+    "dry_respiratory": 0,
+    "productive_respiratory": 1,
+    "whooping": 2,
+    "wheeze_present": 3,
+    "non_pathological_or_unclear": 4
+  }
+}

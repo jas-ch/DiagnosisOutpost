@@ -1,0 +1,22 @@
+{
+  "classes": [
+    "conjunctivitis_eye_discharge",
+    "vesicular_pustular_lesions",
+    "periorbital_swelling",
+    "nasal_discharge",
+    "oral_perioral_lesions",
+    "dry_cracked_lips",
+    "normal",
+    "unclear"
+  ],
+  "class_to_index": {
+    "conjunctivitis_eye_discharge": 0,
+    "vesicular_pustular_lesions": 1,
+    "periorbital_swelling": 2,
+    "nasal_discharge": 3,
+    "oral_perioral_lesions": 4,
+    "dry_cracked_lips": 5,
+    "normal": 6,
+    "unclear": 7
+  }
+}

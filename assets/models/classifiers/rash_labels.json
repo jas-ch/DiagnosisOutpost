@@ -1,0 +1,22 @@
+{
+  "classes": [
+    "measles_like",
+    "chickenpox_like",
+    "hfmd_like",
+    "monkeypox_like",
+    "scarlet_fever_like",
+    "urticaria",
+    "impetigo_like",
+    "unclear"
+  ],
+  "class_to_index": {
+    "measles_like": 0,
+    "chickenpox_like": 1,
+    "hfmd_like": 2,
+    "monkeypox_like": 3,
+    "scarlet_fever_like": 4,
+    "urticaria": 5,
+    "impetigo_like": 6,
+    "unclear": 7
+  }
+}
